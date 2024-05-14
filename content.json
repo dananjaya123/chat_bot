@@ -1,0 +1,583 @@
+{
+   "intents":[
+      {
+         "tag":"greeting",
+         "input":[
+            "Hello",
+            "Hi",
+            "Hey",
+            "Good morning",
+            "Good afternoon",
+            "Hola",
+            "Bonjour",
+            "Howdy",
+            "Greetings",
+            "Yo",
+            "Hiya",
+            "Salutations",
+            "Hey there",
+            "What's up",
+            "Good day"
+         ],
+         "response":[
+            "Hello! Welcome to Lava Coffee . How can I assist you today?",
+            "Hi there! What can I get started for you?",
+            "Hey! Ready to order some delicious coffee?"
+         ]
+      },
+      {
+         "tag":"goodbye",
+         "input":[
+            "Goodbye",
+            "Thanks, bye",
+            "Thanks",
+            "Bye",
+            "See you later",
+            "I'll be going now",
+            "Bye for now",
+            "Take care",
+            "Catch you later",
+            "Until next time",
+            "Farewell",
+            "So long",
+            "Until we meet again",
+            "Have a great day",
+            "Adios",
+            "Cheerio",
+            "Bye-bye"
+         ],
+         "response":[
+            "Goodbye! Have a wonderful day and enjoy your coffee."
+         ]
+      },
+      {
+         "tag":"order",
+         "input":[
+            "I'd like to order a coffee, please.",
+            "Can I get a [specific coffee]?",
+            "I'll have a [coffee drink].",
+            "coffee order.",
+            "order",
+            "can i place order",
+            "i want coffee",
+            "i want a coffee",
+            "What beverages do you have?",
+            "Could you describe your drink selection?",
+            "Can you list your available drinks?",
+            "I'm interested in your menu, what do you offer?",
+            "What are your specialty beverages?",
+            "Show me your coffee options",
+            "What types of drinks are on your menu?",
+            "Do you have a list of your drinks?",
+            "Could you provide details about your menu?",
+            "What kind of drinks can I get here?",
+            "What's available to drink?",
+            "Can you show me your beverage selection?",
+            "I'd like to know more about your menu",
+            "Tell me about your available drinks",
+            "what coffee",
+            "coffee",
+            "drink"
+         ],
+         "response":[
+            "We offer a variety of drinks including Cappuccino,Americano,Au Lait,Au Lait Cappuccino,Chans Espresso,Con Panna,Black Coffee,Espresso,Frappe,French Coffee,Iced Coffee Latte,Irish Coffee,Latte Macchiato,and Wainans Choco Coffee at Lava Coffee shop."
+         ]
+      },
+      {
+         "tag":"custom",
+         "input":[
+            "Cappuccino",
+            "Americano",
+            "Au Lait",
+            "Lait",
+            "Au Lait Cappuccino",
+            "Chans Espresso",
+            "Espresso",
+            "Frappe",
+            "French Coffee",
+            "Iced Coffee Latte",
+            "Irish Coffee",
+            "Latte Macchiato",
+            "Wainans Choco Coffee",
+            "I want my coffee extra hot",
+            "Can I customize my drink?",
+            "I'd like my latte with almond milk"
+         ],
+         "response":[
+            "Absolutely! your Preference is available. You are free to go and get it during our working hours. "
+         ]
+      },
+      {
+         "tag":"open",
+         "input":[
+            "What are your opening hours?",
+            "When do you open?",
+            "Are you open today?",
+            "Are you open Monday",
+            "Are you open Tuesday",
+            "Are you open Wednesday",
+            "Are you open Thursday",
+            "Are you open Friday ",
+            "open day",
+            "working hours",
+            "hours",
+            "working",
+            "What are your opening hours?",
+            "When do you open?",
+            "What time do you close?",
+            "Are you open now?",
+            "When can I visit?",
+            "What are your hours of operation?",
+            "Are you open today?",
+            "Can you tell me your operating hours?",
+            "When do you start serving coffee?",
+            "Are you currently serving coffee?",
+            "Do you have any special hours?",
+            "What time do you start serving breakfast?",
+            "When is the best time to visit?",
+            "Do you have different hours on weekends?",
+            "Is there a specific time for happy hour?"
+         ],
+         "response":[
+            "We're open 365 days [9AM to 10PM]."
+         ]
+      },
+      {
+         "tag":"feedback",
+         "input":[
+            "I loved the coffee",
+            "The service was excellent",
+            "My drink was perfect",
+            "Amazing coffee",
+            "Great job!",
+            "I'm impressed",
+            "Everything was fantastic",
+            "The coffee was delicious",
+            "Your barista did a fantastic job",
+            "I had a wonderful experience",
+            "The atmosphere was great",
+            "I'm satisfied with my order",
+            "Your staff was friendly and helpful"
+         ],
+         "response":[
+            "Thank you for your kind words! We strive to provide the best service."
+         ]
+      },
+      {
+         "tag":"complaint",
+         "input":[
+            "My coffee is cold",
+            "I didn't receive my order",
+            "The coffee tastes burnt",
+            "The service was slow",
+            "I'm not satisfied with my drink",
+            "I'm disappointed",
+            "This is unacceptable",
+            "I'm not happy with the experience",
+            "I want to speak to the manager",
+            "The coffee was too bitter",
+            "My order was incorrect",
+            "I received the wrong drink",
+            "The cup was dirty",
+            "The staff was rude",
+            "The atmosphere was unpleasant",
+            "There was a long wait time",
+            "The prices are too high"
+         ],
+         "response":[
+            "We apologize for the inconvenience. Please let us know your order details, and we'll make it right.",
+            "We're sorry to hear that. We'll investigate the issue and ensure it doesn't happen again."
+         ]
+      },
+      {
+         "tag":"location",
+         "input":[
+            "Where are you located?",
+            "What's your address?",
+            "Can you give me directions to your cafe?",
+            "Where are you located?",
+            "What's your address?",
+            "Can you give me directions to your coffee shop?",
+            "Is your coffee shop nearby?",
+            "How do I find you?",
+            "Where can I locate you?",
+            "What area are you in?",
+            "What's your exact location?",
+            "Do you have a map?",
+            "Can you tell me where you're situated?",
+            "Are you easy to find?",
+            "What's the closest landmark to your coffee shop?",
+            "Do you have parking available?",
+            "Are you in the city center?"
+         ],
+         "response":[
+            "We're located at [Galle fort/lava coffee shop].",
+            "Our address is [Galle fort/lava coffee shop].",
+            "Sure! We're situated at [Galle fort/lava coffee shop]."
+         ]
+      },
+      {
+         "tag":"recommendation",
+         "input":[
+            "What's your most popular drink?",
+            "Can you recommend something?",
+            "I'm not sure what to order. Any suggestions?",
+            "What do you recommend?",
+            "Which coffee is your favorite?",
+            "your favorite",
+            "What's the best drink on the menu?",
+            "What's the crowd favorite?",
+            "Can you suggest something?",
+            "What's the specialty of the house?",
+            "What's your top ",
+            "Do you have any signature drinks?",
+            "What's your specialty beverage?",
+            "Which I try first?",
+            "Which coffee should I try first?",
+            "Do you have any recommendations?"
+         ],
+         "response":[
+            "Our most popular drink is [Cappuccino].",
+            "I recommend trying our [Cappuccino].",
+            "If you're unsure, I suggest our [Cappuccino]."
+         ]
+      },
+      {
+         "tag":"price",
+         "input":[
+            "price",
+            "cost",
+            "total",
+            "amount",
+            "How much does a [specific drink] cost?",
+            "What are your prices like?",
+            "Do you have a price list?",
+            "How much does a coffee cost?",
+            "What's the price of your drinks?",
+            "Do you have a price list?",
+            "Can you tell me the prices?",
+            "How expensive is your coffee?",
+            "What are your rates?",
+            "Are your drinks affordable?",
+            "Can you provide pricing information?",
+            "What's the cost of your beverages?",
+            "Are there any discounts available?",
+            "Do you have any special offers?",
+            "How much should I budget for a drink?",
+            "Are your prices reasonable?",
+            "Can I find your prices online?",
+            "What's the price range for your drinks?"
+         ],
+         "response":[
+            "Our prices are updated regularly, including offers and special deals. Please visit our website to get the latest prices and promotions."
+         ]
+      },
+      {
+         "tag":"recipe",
+         "input":[
+            "recipe",
+            "Can I get the recipe?",
+            "Do you share your recipes?",
+            "Can you tell me how to make it?",
+            "What's the recipe for this drink?",
+            "Is the recipe for this drink a secret?",
+            "Are your recipes confidential?",
+            "Do you have any secret ingredients in your drinks?",
+            "Can I find your drink recipes online?",
+            "Is the recipe for your drinks available anywhere?",
+            "Are your recipes proprietary?",
+            "Do you have a cookbook with your recipes?",
+            "Can I purchase your recipe book?",
+            "Do you offer cooking classes for your drinks?",
+            "Can I learn how to make your drinks at home?",
+            "make drink"
+         ],
+         "response":[
+            "Our recipes are proprietary and secret! We're unable to share them. But we assure you, our drinks are made with the finest ingredients and crafted with care."
+         ]
+      },
+      {
+         "tag":"sizes",
+         "input":[
+            "What cup sizes are available?",
+            "Are there multiple sizes for drinks?",
+            "Do you offer a variety of cup sizes?",
+            "Can I choose the size of my drink?",
+            "Are your drinks available in different cup sizes?",
+            "Do you have options for cup sizes?",
+            "What sizes do your beverages come in?",
+            "Is there a choice of cup sizes?",
+            "Can I select the size of my beverage?",
+            "Are there options for small, medium, and large drinks?",
+            "What are the available drink sizes?",
+            "Can I get a smaller cup?",
+            "Are there any size limitations for drinks?",
+            "Do you offer extra-large sizes?",
+            "Can I upsize my drink?"
+         ],
+         "response":[
+            "We offer [small/medium/large] sizes for our drinks. You can choose the size that best suits your preference. you are free to go and buy the required size at lava coffee"
+         ]
+      },
+      {
+         "tag":"wifi",
+         "input":[
+            "What's the wifi password",
+            "Do you provide wifi for customers",
+            "Can access to the wifi here",
+            "What's the Wi-Fi password",
+            "Can access to your Wi-Fi?",
+            "Wi-Fi",
+            "internet",
+            "Is there Wi-Fi",
+            "Can connect to your Wi-Fi network",
+            "Do you have Wi-Fi for customers",
+            "use your Wi-Fi",
+            "Is Wi-Fi access provided",
+            "How do I get on your Wi-Fi",
+            "Is there internet access",
+            "Do you have a guest network",
+            "What's the password for the Wi-Fi",
+            "Is Wi-Fi service complimentary",
+            "public Wi-Fi"
+         ],
+         "response":[
+            "Sure! The wifi password is [556677].",
+            "Yes, we offer complimentary wifi. The password is [11222].",
+            "Of course! Here's the wifi password: [11223344]."
+         ]
+      },
+      {
+         "tag":"booking",
+         "input":[
+            "Can I make a reservation?",
+            "Do you accept bookings?",
+            "How can I reserve a table?",
+            "online booking",
+            "booking",
+            "oline by",
+            "how to by online"
+         ],
+         "response":[
+            "unfortunately as of yet we dont offer prior booking"
+         ]
+      },
+      {
+         "tag":"offers",
+         "input":[
+            "Do you have any special offers today?",
+            "Are there any discounts available?",
+            "What are the current promotions?",
+            "Do you offer any deals on drinks?",
+            "Are there any special discounts for regular customers?"
+         ],
+         "response":[
+            "Yes, currently we have a buy one get one free offer on all espresso drinks!"
+         ]
+      },
+      {
+         "tag":"allergies",
+         "input":[
+            "Do your drinks contain dairy?",
+            "Are there any nuts in your beverages?",
+            "Are your drinks gluten-free?",
+            "Do you have any options for lactose-intolerant customers?",
+            "Are your drinks suitable for vegans?"
+         ],
+         "response":[
+            "Yes, our drinks may contain dairy. If you have any specific dietary concerns, please let us know, and we can customize your drink accordingly."
+         ]
+      },
+      {
+         "tag":"payment",
+         "input":[
+            "Do you accept credit cards?",
+            "credit cards",
+            "Can I pay with Apple Pay?",
+            "Can I  Apple Pay?",
+            "debit cards",
+            "What payment methods do you accept?",
+            "Are there any restrictions on payment methods?",
+            "Can I pay online for my order?"
+         ],
+         "response":[
+            "We accept cash, credit/debit cards, and mobile payments including Apple Pay and Google Pay."
+         ]
+      },
+      {
+         "tag":"event",
+         "input":[
+            "Do you host private events?",
+            "Can I book your venue for a birthday party?",
+            "Do you offer event hosting services?",
+            "What types of events can I host at your coffee shop?",
+            "Are there any restrictions on event bookings?"
+         ],
+         "response":[
+            "Yes, we offer event hosting services. Please contact us for more information and reservations."
+         ]
+      },
+      {
+         "tag":"community",
+         "input":[
+            "Do you participate in community events?",
+            "Are you involved in any charity work?",
+            "How do you contribute to the local community?",
+            "Do you support any local initiatives?",
+            "Are there any community programs you're involved in?"
+         ],
+         "response":[
+            "Yes, we actively participate in local events and support community initiatives. Follow us on social media to stay updated on our involvement!"
+         ]
+      },
+       {
+         "tag":"menu",
+         "input":[
+            "What beverages do you have?",
+            "Can you list your available drinks?",
+            "What's on the menu?",
+            "show me your menu",
+            "What do you serve?",
+            "What are your specialties?",
+            "Can I see your drink options?",
+            "Tell me about your drinks",
+            "What can I drink here?",
+            "What are the options?",
+            "What drinks do you offer?"
+         ],
+         "response":[
+            "We offer a variety of drinks including Cappuccino,Americano,Au Lait,Au Lait Cappuccino,Chans Espresso,Con Panna,Black Coffee,Espresso,Frappe,French Coffee,Iced Coffee Latte,Irish Coffee,Latte Macchiato,and Wainans Choco Coffee"
+         ]
+      },
+      {
+         "tag":"gifts",
+         "input":[
+            "Do you sell gift cards?",
+            "Can I purchase a gift card?",
+            "What types of gift cards do you offer?",
+            "How can I buy a gift card?",
+            "Are there any restrictions on gift cards?"
+         ],
+         "response":[
+            "Yes, we offer gift cards that can be purchased in-store or online. They make the perfect gift for any coffee lover!"
+         ]
+      },
+      {
+         "tag":"delivery",
+         "input":[
+            "Do you offer delivery?",
+            "Can I get coffee delivered?",
+            "What delivery services do you use?",
+            "Is there a minimum order for delivery?",
+            "How long does delivery take?"
+         ],
+         "response":[
+            "Yes, we offer delivery through various third-party services. Delivery times may vary depending on your location."
+         ]
+      },
+      {
+         "tag":"vegan",
+         "input":[
+            "Do you have any vegan options?",
+            "Are your drinks suitable for vegans?",
+            "Are there dairy-free options?",
+            "Which drinks are vegan-friendly?",
+            "Can I get almond milk in my latte?"
+         ],
+         "response":[
+            "Yes, we offer a variety of vegan options including almond milk lattes, soy milk cappuccinos, and coconut milk mochas."
+         ]
+      },
+      {
+         "tag":"holiday",
+         "input":[
+            "Do you have special hours for holidays?",
+            "Are you open on Christmas?",
+            "What are your hours for New Year's Eve?",
+            "Do you have adjusted hours for holidays?",
+            "Are you open on Thanksgiving?"
+         ],
+         "response":[
+            "Yes, we may have adjusted hours for holidays. Please check our website or call us for holiday hours closer to the date."
+         ]
+      },
+      {
+         "tag":"contact",
+         "input":[
+            "What's your phone number?",
+            "Can I get your contact details?",
+            "How can I reach you?",
+            "Do you have an email address?",
+            "Can I contact you through social media?"
+         ],
+         "response":[
+            "Sure! You can reach us at (+94) 772038982 or via email at info@lavacoffee.com. You can also message us on Facebook or Instagram!"
+         ]
+      },
+      {
+         "tag":"caffeine",
+         "input":[
+            "How much caffeine is in your drinks?",
+            "Do you have low-caffeine options?",
+            "Which drinks have the most caffeine?",
+            "Can I get decaf coffee?",
+            "Is there caffeine in your herbal teas?"
+         ],
+         "response":[
+            "Our espresso-based drinks typically have higher caffeine content, while our herbal teas and decaf options have minimal caffeine. If you're looking for a low-caffeine option, we recommend our herbal teas or decaf coffee."
+         ]
+      },
+      {
+         "tag":"health",
+         "input":[
+            "What safety measures do you have in place?",
+            "How do you ensure food safety?",
+            "Are your facilities sanitized regularly?",
+            "What precautions are you taking during the pandemic?",
+            "Can I see your health and safety protocols?"
+         ],
+         "response":[
+            "Your health and safety are our top priorities! We adhere to strict cleanliness and sanitation standards, regularly sanitize our facilities, and follow all health guidelines to ensure a safe environment for our customers."
+         ]
+      },
+      {
+         "tag":"art",
+         "input":[
+            "Do you create coffee art?",
+            "Can I request custom coffee art?",
+            "What types of designs can you make?",
+            "Do you have any special coffee art events?",
+            "Can I watch the barista create coffee art?"
+         ],
+         "response":[
+            "Yes, our talented baristas can create beautiful coffee art on request! From hearts to intricate designs, we love adding a personal touch to your coffee experience."
+         ]
+      },
+      {
+         "tag":"ingredients",
+         "input":[
+            "ingredients",
+            "components",
+            "contents",
+            "recipe",
+            "formula"
+         ],
+         "response":[
+            "Our drinks are made with the finest ingredients sourced from local producers. If you have any specific dietary concerns, feel free to ask our baristas!"
+         ]
+      },
+      {
+         "tag":"allergens",
+         "input":[
+            "allergens",
+            "allergies",
+            "intolerances",
+            "sensitivities",
+            "reactions"
+         ],
+         "response":[
+            "We take allergies and dietary restrictions seriously. Please let our staff know about any allergies or intolerances, and we'll do our best to accommodate your needs."
+         ]
+      }
+   ]
+}
