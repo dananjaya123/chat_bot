@@ -18,11 +18,15 @@ def def_train_model():
 @app.route('/predict', methods=['POST'])
 def predict():
     try:
-        message = request.json['message']
+        data = request.get_json(force=True)
+        if 'message' not in data:
+            raise ValueError("No 'message' field in request JSON")
+        message = data['message']
+        # print(f"Received message: {message}")
         predicted_intent = predict_intent(message)
-        print(predicted_intent)
         return jsonify({'predicted_intent': predicted_intent})
     except Exception as e:
+        # print(f"Error: {e}")
         return jsonify({'error': str(e)}), 400
 
 
