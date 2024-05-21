@@ -1,4 +1,4 @@
-#import the lib
+# import the lib
 import json
 import pickle
 import random
@@ -7,15 +7,17 @@ import string
 import nltk
 import numpy as np
 from nltk.stem import WordNetLemmatizer
+from tensorflow.keras.callbacks import ModelCheckpoint
 from tensorflow.keras.layers import Dense, Dropout
 from tensorflow.keras.models import Sequential
-from tensorflow.keras.optimizers import SGD
+from tensorflow.keras.optimizers import Adam
 
 # tokenizer = Tokenizer()
 lemmatizer = WordNetLemmatizer()
 
 nltk.download('punkt')
 nltk.download('wordnet')
+
 
 def train_model():
     # inport the data set
@@ -87,28 +89,36 @@ def train_model():
     train_x = list(training[:, 0])
     train_y = list(training[:, 1])
 
-    model = Sequential()  # sequential model
-    # 128 = Neurons  input_shape dependant on  the size of the training data of train_x
-    model.add(Dense(128, input_shape=(len(train_x[0]),), activation='relu'))
+    # Define model checkpoint to save the best model
+    model_checkpoint = ModelCheckpoint('best_chatbot_model.h5', save_best_only=True)
+
+    # Increase model capacity
+    model = Sequential()
+    model.add(Dense(256, input_shape=(len(train_x[0]),), activation='relu'))
     model.add(Dropout(0.5))
-    model.add(Dense(64, activation='relu'))
+    model.add(Dense(128, activation='relu'))
     model.add(Dropout(0.5))
     model.add(Dense(len(train_y[0]), activation='softmax'))
 
-    sgd = SGD(learning_rate=0.01, decay=1e-6, momentum=0.9, nesterov=True)
-    model.compile(loss='categorical_crossentropy', optimizer=sgd, metrics=['accuracy'])
+    # Modify optimizer parameters
+    optimizer = Adam(learning_rate=0.001)
 
-    # model.fit(np.array(train_x), np.array(train_y), epochs=200, batch_size=5, verbose=1)
-    # model.save('chatbot_model.model')
+    # Compile the model
+    model.compile(loss='categorical_crossentropy', optimizer=optimizer, metrics=['accuracy'])
 
-    hist = model.fit(np.array(train_x), np.array(train_y), epochs=200, batch_size=5, verbose=1)
+    # Train the model with early stopping and model checkpoint
+    hist = model.fit(np.array(train_x), np.array(train_y), epochs=200, batch_size=5, verbose=1, validation_split=0.2)
 
     import matplotlib.pyplot as plt
     # pointing model accuracy
     plt.plot(hist.history['accuracy'], label='training accuracy')
+    plt.plot(hist.history['val_accuracy'], label='validation accuracy')
     plt.plot(hist.history['loss'], label='training loss')
+    plt.plot(hist.history['val_loss'], label='validation loss')
     plt.legend()
 
-    model.save("chatbot_model.keras", hist)
+    # Save the model
+    model.save("chatbot_model.h5")
+    print("Model trained successfully")
 
     return "Model trained successfully"
