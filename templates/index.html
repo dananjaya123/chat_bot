@@ -6,26 +6,35 @@
     <title>Chatbot</title>
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
-    <!-- Material Design Lite CSS -->
-    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
-    <!-- Material Design Lite JavaScript -->
-    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <style>
         body {
             font-family: 'Roboto', sans-serif;
             margin: 0;
             padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
             height: 100vh;
+            display: flex;
+            flex-direction: column;
             background-color: white;
         }
 
+        .content {
+            display: none; /* Initially hidden */
+            position: fixed;
+            bottom: 80px;
+            right: 20px;
+            width: 400px;
+            max-width: 100%;
+            height: 60%;
+            z-index: 1000;
+        }
+
         .chat-container {
-            width: 50%;
-            height: 80%;
-            background: rgba(0, 128, 0, 0.1);
+            width: 100%;
+            height: 100%;
+            background-color: rgb(255, 178, 103);
             backdrop-filter: blur(10px);
             border-radius: 10px;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -46,7 +55,7 @@
         .chat-input {
             display: flex;
             padding: 20px;
-            background: rgba(0, 128, 0, 0.1);
+            background-color: rgb(255, 157, 64);
             backdrop-filter: blur(10px);
         }
 
@@ -63,7 +72,7 @@
         .chat-input button {
             padding: 10px;
             border: none;
-            background: #4caf50; /* Green color */
+            background-color: #1f54b7;
             color: white;
             cursor: pointer;
             border-radius: 5px;
@@ -74,46 +83,148 @@
             justify-content: center;
         }
 
-        .message {
-            margin-bottom: 10px;
-            padding: 10px;
-            border-radius: 10px;
-            background: rgba(0, 128, 0, 0.5);
+        .chat-input button:hover {
+            background-color: #11316c;
             color: white;
-            display: inline-block;
-            max-width: 70%;
-            text-align: center; /* Center text */
         }
 
-        .message.user {
-            align-self: flex-end;
-            background-color: #a5d6a7;
-            color: black;
+
+        .chat-icon {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            background-color: #1f54b7;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
         }
 
-        .message.bot {
-            align-self: flex-start;
-            background-color: #c8e6c9;
-            color: black;
+        .chat-icon:hover {
+            background-color: #11316c;
         }
+
+        .chat-icon img {
+            width: 30px;
+            height: 30px;
+        }
+
+        .message {
+        margin-bottom: 10px;
+        padding: 10px;
+        border-radius: 10px;
+        background: rgb(227, 115, 15);
+        color: white;
+        display: inline-block;
+        max-width: 70%;
+        text-align: center; /* Center text */
+    }
+
+    .message.user {
+        align-self: flex-end;
+        background-color: #11316c;
+        color: white;
+    }
+
+    .message.bot {
+        align-self: flex-start;
+        background-color: rgb(74, 120, 206);
+        color: white;
+        display: flex;
+        align-items: center;
+        border-radius: 10px;
+        padding: 10px;
+    }
+
+    .message.bot .icon {
+        margin-right: 10px;
+        border-radius: 50%;
+        background-color: #e3730f;
+        padding: 1px;
+    }
+
+    .message .timestamp {
+        display: block;
+        font-size: 0.5em;
+        margin-top: 5px;
+        color: rgba(255, 255, 255, 0.6);
+    }
     </style>
 </head>
 <body>
-<div class="chat-container">
-    <div id="chat-box" class="chat-box"></div>
-    <div class="chat-input">
-        <input id="user-input" type="text" placeholder="Type your message here...">
-        <button class="mdl-button mdl-js-button mdl-button--raised " onclick="sendMessage()">
-            <pane>Send</pane>
+<!-- Navigation Bar -->
+<nav class="navbar navbar-expand-sm navbar-dark" style="background-color: #0d2449">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">Chatbot</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
         </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">ABOUT US</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">BLOGS</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">CONTACT</a>
+                </li>
+            </ul>
+            <form class="d-flex">
+                   <a class="btn btn-outline btn-sm" type="button" href="{{ url_for('login') }}"
+                   style="background-color: rgb(255, 157, 64);">Login</a>
+            </form>
+        </div>
+    </div>
+</nav>
+
+<!-- Chat Icon -->
+<div class="chat-icon" onclick="toggleChat()">
+    <img src="../assets/img/chat.png"  alt="Chat Icon">
+</div>
+
+<!-- Main Content -->
+<div class="content" id="chatContent">
+    <div class="chat-container">
+        <div id="chat-box" class="chat-box"></div>
+        <div class="chat-input">
+            <input id="user-input" type="text" placeholder="Type your message here..." class="form-control me-2">
+            <button class="btn btn" onclick="sendMessage()">
+                <span>Send</span>
+            </button>
+        </div>
     </div>
 </div>
-<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+        crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
+    function toggleChat() {
+        const chatContent = document.getElementById('chatContent');
+        chatContent.style.display = chatContent.style.display === 'none' || chatContent.style.display === '' ? 'flex' : 'none';
+    }
+
     async function sendMessage() {
         const userInput = document.getElementById('user-input');
         const message = userInput.value.trim();
-        console.log(userInput)
         if (message) {
             appendMessage('user', message);
             userInput.value = '';
@@ -136,16 +247,37 @@
         }
     }
 
-
-    function appendMessage(sender, message) {
+ function appendMessage(sender, message) {
         const chatBox = document.getElementById('chat-box');
         const messageElement = document.createElement('div');
         messageElement.className = `message ${sender}`;
-        messageElement.textContent = message;
+
+        if (sender === 'bot') {
+            const iconElement = document.createElement('img');
+            iconElement.src = '../assets/img/robot.jpg'; // Robot icon URL
+            iconElement.alt = 'Robot Icon';
+            iconElement.className = 'icon';
+            iconElement.style.width = '30px';
+            iconElement.style.height = '30px';
+
+            const textElement = document.createElement('span');
+            textElement.textContent = message;
+
+            messageElement.appendChild(iconElement);
+            messageElement.appendChild(textElement);
+        } else {
+            messageElement.textContent = message;
+        }
+
+        const timestamp = document.createElement('span');
+        timestamp.className = 'timestamp';
+        const now = new Date();
+        timestamp.textContent = now.toLocaleTimeString();
+        messageElement.appendChild(timestamp);
+
         chatBox.appendChild(messageElement);
         chatBox.scrollTop = chatBox.scrollHeight;
     }
-
 </script>
 </body>
 </html>
