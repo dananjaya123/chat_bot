@@ -2,13 +2,21 @@ from flask import Flask, render_template, request, jsonify
 from train import train_model
 from chatbot import predict_intent
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder='assets')
 
 
 @app.route('/')
 def index():
     return render_template('index.html', title='Welcome to')
 
+
+@app.route('/login')
+def login():
+    return render_template('login.html', title='Login')
+
+@app.route('/admin')
+def admin():
+    return render_template('adminPanel.html', title='Admin')
 
 @app.route('/train')
 def def_train_model():
