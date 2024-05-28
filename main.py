@@ -14,13 +14,16 @@ def index():
 def login():
     return render_template('login.html', title='Login')
 
+
 @app.route('/admin')
 def admin():
     return render_template('adminPanel.html', title='Admin')
 
-@app.route('/train')
-def def_train_model():
-    return train_model()
+
+@app.route('/train', methods=['POST'])
+def train():
+    result = train_model()
+    return jsonify({"status": result})
 
 
 @app.route('/predict', methods=['POST'])

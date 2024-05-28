@@ -15,7 +15,7 @@ nltk.download('punkt')
 
 words_pkl = pickle.load(open('words.pkl', 'rb'))
 tags_pkl = pickle.load(open('tags.pkl', 'rb'))
-model = load_model('chatbot_model.h5')
+model = load_model('chatbot_model.keras')
 # ============================
 # inport the data set
 with open('content.json') as content:
