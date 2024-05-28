@@ -6,13 +6,13 @@ import string
 
 import nltk
 import numpy as np
+import matplotlib.pyplot as plt
 from nltk.stem import WordNetLemmatizer
-from tensorflow.keras.callbacks import ModelCheckpoint
+from tensorflow.keras.callbacks import ModelCheckpoint,EarlyStopping
 from tensorflow.keras.layers import Dense, Dropout
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.optimizers import Adam
 
-# tokenizer = Tokenizer()
 lemmatizer = WordNetLemmatizer()
 
 nltk.download('punkt')
@@ -90,7 +90,10 @@ def train_model():
     train_y = list(training[:, 1])
 
     # Define model checkpoint to save the best model
-    model_checkpoint = ModelCheckpoint('best_chatbot_model.h5', save_best_only=True)
+    model_checkpoint = ModelCheckpoint('chatbot_model.keras', save_best_only=True)
+
+    # Define early stopping to prevent overfitting
+    early_stopping = EarlyStopping(monitor='val_loss', patience=10, restore_best_weights=True)
 
     # Increase model capacity
     model = Sequential()
@@ -107,18 +110,19 @@ def train_model():
     model.compile(loss='categorical_crossentropy', optimizer=optimizer, metrics=['accuracy'])
 
     # Train the model with early stopping and model checkpoint
-    hist = model.fit(np.array(train_x), np.array(train_y), epochs=200, batch_size=5, verbose=1, validation_split=0.2)
+    hist = model.fit(
+        np.array(train_x), np.array(train_y),
+        epochs=200, batch_size=5, verbose=1,
+        validation_split=0.2,
+        callbacks=[model_checkpoint, early_stopping]
+    )
 
-    import matplotlib.pyplot as plt
     # pointing model accuracy
     plt.plot(hist.history['accuracy'], label='training accuracy')
     plt.plot(hist.history['val_accuracy'], label='validation accuracy')
     plt.plot(hist.history['loss'], label='training loss')
     plt.plot(hist.history['val_loss'], label='validation loss')
     plt.legend()
-
-    # Save the model
-    model.save("chatbot_model.h5")
-    print("Model trained successfully")
-
-    return "Model trained successfully"
+    plt.savefig('assets/accuracy/training_metrics.png')
+    plt.close()
+    return "success"
