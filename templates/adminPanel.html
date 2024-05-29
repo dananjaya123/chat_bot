@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Panel</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .sidebar {
+            height: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 250px;
+            background-color: #0d2449;
+            color: white;
+            transition: all 0.3s;
+        }
+
+        .sidebar.collapsed {
+            width: 80px;
+        }
+
+        .sidebar .nav-link {
+            color: white;
+        }
+
+        .sidebar .nav-link:hover {
+            background-color: rgb(255, 157, 64);
+        }
+
+        .sidebar .nav-item.active .nav-link {
+            background-color: #007bff;
+        }
+
+        .content {
+            margin-left: 250px;
+            padding: 20px;
+            transition: all 0.3s;
+            width: 100%;
+        }
+
+        .collapsed + .content {
+            margin-left: 80px;
+        }
+    </style>
+</head>
+<body>
+<div class="d-flex">
+    <!-- Sidebar -->
+    <div id="sidebar" class="sidebar ">
+        <button id="toggleButton" class="btn mb-3" style="color: white">
+            <i class="fa fa-bars" aria-hidden="true"></i>
+        </button>
+        <nav class="nav flex-column">
+            <a class="nav-link active" href="#">Dashboard</a>
+            <a class="nav-link" href="#">Users</a>
+            <a class="nav-link" href="#">Profile</a>
+            <a class="nav-link" href="{{ url_for('index') }}">Logout</a>
+        </nav>
+    </div>
+
+    <!-- Page Content -->
+    <div id="content" class="content">
+        <div class="card">
+            <div class="card-header">
+                Train Chat bot
+            </div>
+            <div class="card-body">
+                <div class="mb-3">
+                    <label for="tag" class="form-label">Tag</label>
+                    <input type="text" class="form-control" id="tag" placeholder="input tag">
+                </div>
+                <div class="mb-3">
+                    <label for="inputs" class="form-label">Inputs</label>
+                    <textarea class="form-control" id="inputs" rows="3"
+                              placeholder="{''Hi'',''Hello''},{''bye bye'',''Goodbye''}"></textarea>
+                </div>
+                <div class="mb-3">
+                    <label for="responses" class="form-label">Response</label>
+                    <textarea class="form-control" id="responses" rows="3"
+                              placeholder="{''Talk to you later'',''Hello''},"></textarea>
+                </div>
+                <a href="#" class="btn " style="background-color: rgb(255, 157, 64)">Add Content</a>
+                <a href="#" class="btn btn-primary" style=" background-color: #0f3d6e;"
+                   onclick="trainChatBot()">Train</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+        crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script>
+    async function trainChatBot() {
+    try {
+        const response = await fetch('/train', {
+            method: 'POST'
+        });
+
+        const data = await response.json();
+        if (data.status === 'success') {
+            Swal.fire({
+                position: "top-end",
+                icon: "success",
+                title: 'Model trained successfully',
+                showConfirmButton: false,
+                timer: 1500
+            });
+        }
+
+    } catch (error) {
+        console.error('Error:', error);
+        Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: "Something went wrong!",
+        });
+    }
+}
+
+
+</script>
+</body>
+</html>
