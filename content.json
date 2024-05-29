@@ -1,23 +1,936 @@
 {
-    "intents":[
-  {
-    "tag": "greeting",
-    "input": [
-       "Hi",
-       "How are you?",
-       "Is anyone there?",
-       "Hello",
-       "Good day",
-       "What's up",
-       "how are ya",
-       "heyy",
-       "whatsup",
-       "??? ??? ??"
-    ],
-    "response": [
-       "Hello!",
-       "Good to see you again!",
-       "Hi there, how can I help?"
-    ]
- }]
- }
+  "intents": [
+    {
+      "tag": "greeting",
+      "input": [
+        "Hi",
+        "Hey",
+        "How are you?",
+        "Is anyone there?",
+        "Hello",
+        "Good day",
+        "What's up",
+        "how are ya",
+        "heyy",
+        "whatsup",
+        "BOC Assistant",
+        "Assistant",
+        "buddy",
+        "hey buddy"
+      ],
+      "response": [
+        "Hello! How can I assist you today?"
+      ]
+    },
+    {
+      "tag": "goodbye",
+      "input": [
+        "Bye",
+        "Goodbye",
+        "See you later",
+        "cya",
+        "see you",
+        "bye bye",
+        "See you later",
+        "Goodbye",
+        "I am Leaving",
+        "Bye",
+        "Have a Good day",
+        "talk to you later",
+        "nice work",
+        "well done",
+        "good job",
+        "thanks for the help",
+        "Good work"
+      ],
+      "response": [
+        "Goodbye! Have a great day!"
+      ]
+    },
+    {
+      "tag": "name",
+      "input": [
+        "name",
+        "your name",
+        "do you have a name",
+        "what are you called",
+        "what is your name",
+        "what should I call you",
+        "whats your name?",
+        "what are you",
+        "who are you",
+        "who is this",
+        "what am i chatting to",
+        "who am i taking to",
+        "what are you"
+      ],
+      "response": [
+        "You can call me BOC Loan buddy.",
+        "I'm BOC Loan buddy",
+        "I am a BOC Loan buddy.",
+        "I am your BOC Loan buddy"
+      ]
+    },
+    {
+      "tag": "thanks",
+      "input": [
+        "Thank you",
+        "Thanks",
+        "Appreciate it"
+      ],
+      "response": [
+        "You're welcome!",
+        "My pleasure!"
+      ]
+    },
+    {
+      "tag": "fallback",
+      "input": [
+        "Sorry, I don't understand",
+        "Can you repeat that?",
+        "I'm not sure I follow"
+      ],
+      "response": [
+        "I'm sorry, I didn't catch that. Could you please try rephrasing your question?"
+      ]
+    },
+    {
+      "tag": "swear",
+      "input": [
+        "fuck",
+        "bitch",
+        "shut up",
+        "hell",
+        "stupid",
+        "idiot",
+        "dumb ass",
+        "asshole",
+        "fucker"
+      ],
+      "response": [
+        "please use appropriate language",
+        "Maintaining decency would be appreciated"
+      ]
+    },
+    {
+      "tag": "type",
+      "input": [
+        "Loan",
+        "Loan details",
+        "Loan type",
+        "More information about loans",
+        "Tell me about loans"
+      ],
+      "response": [
+        "Sure! Here are the types of loans we offer:\n1. Overdraft Facilities\n2. Housing Loan\n3. Education Loan\n4. Pensioners’ Loan\n5. Personal Loan\n6. Green Loans\n\nYou can click on the links for more details."
+      ]
+    },
+    {
+      "tag": "overdraft",
+      "input": [
+        "overdraft",
+        "Overdraft Loan",
+        "Overdraft Facilities",
+        "Tell me about overdraft facilities",
+        "What are overdraft facilities?"
+      ],
+      "response": [
+        "For more details on our overdraft facilities, you can visit <a target='_blank' href='https://www.boc.lk/personal-banking/loans/overdraft-facilities/overdraft-facilities'>here</a>."
+      ]
+    },
+    {
+      "tag": "housing",
+      "input": [
+        "housing",
+        "Housing Loan",
+        "Tell me about housing loans",
+        "What housing loan options do you have?"
+      ],
+      "response": [
+        "We offer various housing loan schemes including:\n1) BOC Housing Loan Scheme <a target='_blank' href='https://www.boc.lk/personal-banking/loans/housing-loan/boc-housing-loan-scheme'>Click here..</a>\n2) BOC Sirimedura <a target='_blank' href='https://www.boc.lk/personal-banking/loans/housing-loan/boc-sirimedura'>Click here</a>\n3) Housing Loan for University Staff <a target='_blank' href='https://www.boc.lk/personal-banking/loans/housing-loan/housing-loan-for-university-staff'>Click here</a>\n4) Housing Loan Scheme for the Permanent Cadre Employees <a target='_blank' href='https://www.boc.lk/personal-banking/loans/housing-loan/housing-loan-scheme-for-the-permanent-cadre-employees'>here</a>\n\nFor more details, you can visit <a target='_blank' href='https://www.boc.lk/personal-banking/loans/housing-loan'>here</a>."
+      ]
+    },
+    {
+      "tag": "education",
+      "input": [
+        "education",
+        "Education Loan",
+        "Tell me about education loans",
+        "What education loan options are available?"
+      ],
+      "response": [
+        "Our education loan options include:\n1) Educational Loan <a target='_blank' href='https://www.boc.lk/personal-banking/loans/education-loan/educational-loan'>here</a> \n2) Laptop Loan <a target='_blank' href='https://www.boc.lk/personal-banking/loans/education-loan/laptop-loan'>click here</a>\n\nFor more details,you can visit <a target='_blank' href='https://www.boc.lk/personal-banking/loans/education-loan'>here</a>."
+      ]
+    },
+    {
+      "tag": "pensioners",
+      "input": [
+        "pensioners",
+        "Pensioners’ Loan",
+        "Tell me about pensioners’ loans",
+        "What pensioners’ loan options do you have?"
+      ],
+      "response": [
+        "We offer the BOC Abhimana - Government Pensioners’ Loan Scheme. For more details, you can visit <a target='_blank' href='https://www.boc.lk/personal-banking/loans/pensioners-loan/boc-abhimana-government-pensioners-loan-scheme'>here</a>."
+      ]
+    },
+    {
+      "tag": "personal",
+      "input": [
+        "personal",
+        "Personal Loan",
+        "Tell me about personal loans",
+        "What personal loan options are there?"
+      ],
+      "response": [
+        "Our personal loan options include:\n1) BOC Personal Loan <a target='_blank' href='https://www.boc.lk/personal-banking/loans/personal-loan/boc-personal-loan'>click here</a>\n2) Loans for Professionals <a target='_blank' href='https://www.boc.lk/personal-banking/loans/personal-loan/loans-for-professionals'>Click here</a> \n\nFor more details, you can visit <a target='_blank' href='https://www.boc.lk/personal-banking/loans/personal-loan'>here</a>."
+      ]
+    },
+    {
+      "tag": "green",
+      "input": [
+        "green",
+        "Green Loans",
+        "Tell me about green loans",
+        "What green loan options do you have?"
+      ],
+      "response": [
+        "Our green loan options include:\n1) E Friends - II <a target='_blank' href='https://www.boc.lk/personal-banking/loans/green-loans/e-friends-ii'>here Click</a>\n2) Purchasing of Solar Power Systems <a target='_blank' href='https://www.boc.lk/personal-banking/loans/green-loans/purchasing-of-solar-power-systems'>Click here</a>\n3) Sustainable energy and eco-friendly products\n\nFor more details, you can visit <a target='_blank' href='https://www.boc.lk/personal-banking/loans/green-loans'>here</a>."
+      ]
+    },
+    {
+      "tag": "requirements",
+      "input": [
+        "requirements",
+        "What are the requirements for applying for a loan?",
+        "What documents do I need for a loan requirements?"
+      ],
+      "response": [
+        "The requirements vary depending on the type of loan you're applying for. Generally, you'll need identification documents, proof of income, and other specific documents related to the loan type. You can find detailed requirements on our website or by contacting a BOC branch."
+      ]
+    },
+    {
+      "tag": "eligibility",
+      "input": [
+        "eligibility",
+        "Am I eligible for a loan?",
+        "How do I know if I qualify for a loan?"
+      ],
+      "response": [
+        "Eligibility criteria differ for each loan type. Factors such as income, credit history, and employment status may influence eligibility. You can check our website for specific eligibility criteria or visit a BOC branch for assistance."
+      ]
+    },
+    {
+      "tag": "application",
+      "input": [
+        "application",
+        "What application",
+        "What is the process for applying for a loan?",
+        "How do I apply for a loan?"
+      ],
+      "response": [
+        "The loan application process typically involves filling out an application form, providing necessary documents, and undergoing a credit assessment. You can apply online through our website or visit a BOC branch for assistance with the application process."
+      ]
+    },
+    {
+      "tag": "interest_rates",
+      "input": [
+        "interest rates",
+        "What are the interest rates for your loans?",
+        "How much interest do you charge on loans?"
+      ],
+      "response": [
+        "Interest rates vary depending on the loan type, amount, and other factors. You can find our current interest rates on our website or by contacting a BOC branch -loan section contact : +94 11 244 6790"
+      ]
+    },
+    {
+      "tag": "interest_rate_promotions",
+      "input": [
+        "interest promotions",
+        "Do you offer promotional interest rates on loans?",
+        "Are there any special offers or promotions available for loan interest rates?"
+      ],
+      "response": [
+        "Yes, we periodically offer promotional interest rates on select loan products to provide added value to our customers. These promotions may include discounted rates, reduced fees, or special terms for a limited time. Contact our loan specialists or check our website for information on current promotional offers."
+      ]
+    },
+    {
+      "tag": "interest_rate_discounts",
+      "input": [
+        "interest rate discounts",
+        "Are there any discounts available on loan interest rates?",
+        "Do you offer special interest rate discounts on loans?"
+      ],
+      "response": [
+        "Yes, we may offer special interest rate discounts or promotions from time to time, depending on factors such as your creditworthiness, relationship with the bank, or specific loan product. Contact our loan specialists to inquire about any available discounts or promotional offers on loan interest rates."
+      ]
+    },
+    {
+      "tag": "interest_rate_calculation",
+      "input": [
+        "interest rate calculation",
+        "Can you explain how loan interest rates are calculated?",
+        "What factors determine the interest rate on loans?"
+      ],
+      "response": [
+        "Loan interest rates are determined based on various factors, including prevailing market rates, your creditworthiness, loan amount, and repayment term. The specific calculation method may vary depending on the loan type and bank policies. Our loan officers can provide detailed information about interest rate calculation methods and factors."
+      ]
+    },
+    {
+      "tag": "interest_rate_negotiation",
+      "input": [
+        "interest rate negotiation",
+        "Is it possible to negotiate the interest rate on my loan?",
+        "Can I request a lower interest rate for my loan?"
+      ],
+      "response": [
+        "While interest rates on loans are typically based on factors such as market conditions and credit risk, you may have the opportunity to negotiate the rate under certain circumstances. Factors such as your creditworthiness, relationship with the bank, and prevailing market conditions may influence the negotiation process. Contact our loan specialists to discuss potential options for negotiating your loan interest rate."
+      ]
+    },
+    {
+      "tag": "repayment_terms",
+      "input": [
+        "repayment terms",
+        "What are the repayment terms for your loans?",
+        "How long do I have to repay the loan?"
+      ],
+      "response": [
+        "Repayment terms vary depending on the loan type and amount. We offer flexible repayment options to suit your needs. You can find detailed repayment terms on our website or by contacting a BOC branch."
+      ]
+    },
+    {
+      "tag": "processing_time",
+      "input": [
+        "processing time",
+        "How long does it take to process a loan application?",
+        "When will I receive a decision on my loan application?"
+      ],
+      "response": [
+        "Loan processing times vary depending on various factors such as the complexity of the application and verification of documents. We strive to process applications as quickly as possible. You can check the status of your application online or by contacting a BOC branch."
+      ]
+    },
+    {
+      "tag": "loan_fees",
+      "input": [
+        "Are there any fees associated with your loans?",
+        "What fees do I need to pay for a loan?"
+      ],
+      "response": [
+        "There may be certain fees associated with loan processing, such as application fees or administrative fees. You can find detailed information about fees on our website or by contacting a BOC branch."
+      ]
+    },
+    {
+      "tag": "limits",
+      "input": [
+        "What are the minimum and maximum loan amounts?",
+        "Is there a limit on how much I can borrow?"
+      ],
+      "response": [
+        "Loan limits vary depending on the type of loan and your financial situation. We offer loans ranging from small amounts to larger sums, depending on your needs and eligibility. You can find specific loan limits on our website or by contacting a BOC branch."
+      ]
+    },
+    {
+      "tag": "term_options",
+      "input": [
+        "What are the available loan term options?",
+        "How long can I choose to repay the loan?"
+      ],
+      "response": [
+        "We offer various loan term options, allowing you to choose a repayment period that suits your financial situation. You can discuss specific term options with our loan officers or find more information on our website."
+      ]
+    },
+    {
+      "tag": "collateral_requirements",
+      "input": [
+        "Do I need to provide collateral for the loan?",
+        "What type of collateral is accepted for the loan?"
+      ],
+      "response": [
+        "Collateral requirements vary depending on the loan type and amount. While some loans may require collateral, others may not. You can find specific collateral requirements for each loan type on our website or by consulting with our loan officers."
+      ]
+    },
+    {
+      "tag": "approval_criteria",
+      "input": [
+        "What criteria do you use to approve loan applications?",
+        "How do you determine if a loan application is approved?"
+      ],
+      "response": [
+        "Loan approval criteria include factors such as credit history, income, employment status, and debt-to-income ratio. Our underwriters carefully review each application to assess eligibility. You can find more details about our approval criteria on our website."
+      ]
+    },
+    {
+      "tag": "loan_disbursement_process",
+      "input": [
+        "How is the loan amount disbursed?",
+        "When will I receive the funds after loan approval?"
+      ],
+      "response": [
+        "Once your loan is approved, the disbursement process begins. Funds are typically disbursed directly to your bank account. The time it takes to receive the funds may vary depending on various factors. You can track the status of your disbursement online or by contacting our customer service."
+      ]
+    },
+    {
+      "tag": "loan_repayment_methods",
+      "input": [
+        "What are the available repayment methods?",
+        "How can I make repayments on my loan?"
+      ],
+      "response": [
+        "We offer various repayment methods, including online payments, automatic deductions, and in-person payments at our branches. You can choose a method that is convenient for you. More information on repayment methods is available on our website."
+      ]
+    },
+    {
+      "tag": "loan_refinancing_options",
+      "input": [
+        "Do you offer loan refinancing options?",
+        "Can I refinance my existing loan with BOC?"
+      ],
+      "response": [
+        "Yes, we offer loan refinancing options to help you manage your finances more effectively. You can refinance your existing loan with BOC to potentially get better terms or lower interest rates. Contact our loan specialists to discuss refinancing options."
+      ]
+    },
+    {
+      "tag": "loan_default_consequences",
+      "input": [
+        "What happens if I default on my loan payments?",
+        "Are there consequences for missing loan payments?"
+      ],
+      "response": [
+        "Defaulting on loan payments can have serious consequences, including damage to your credit score, legal action, and repossession of collateral. It's essential to communicate with us if you're experiencing difficulties making payments to explore alternative solutions."
+      ]
+    },
+    {
+      "tag": "loan_comparison",
+      "input": [
+        "Can you help me compare different loan options?",
+        "What are the differences between various loan products?"
+      ],
+      "response": [
+        "We can certainly assist you in comparing different loan options. Our loan officers can provide detailed information about the features, terms, and benefits of each loan product to help you make an informed decision."
+      ]
+    },
+    {
+      "tag": "loan_prequalification",
+      "input": [
+        "Is there a way to prequalify for a loan?",
+        "Can I check if I'm eligible for a loan before applying?"
+      ],
+      "response": [
+        "Yes, we offer prequalification services to help you understand your loan eligibility before formally applying. Prequalification typically involves a soft credit check and basic financial assessment. Contact our loan specialists to inquire about prequalification."
+      ]
+    },
+    {
+      "tag": "loan_documentation",
+      "input": [
+        "What documents do I need to submit for my loan application?",
+        "Can you provide a checklist of required documents for a loan?"
+      ],
+      "response": [
+        "The documentation requirements vary depending on the type of loan and your individual circumstances. Commonly required documents include proof of identity, income statements, bank statements, and property documents (if applicable). Our website or loan officers can provide a comprehensive checklist tailored to your specific loan application."
+      ]
+    },
+    {
+      "tag": "loan_processing_updates",
+      "input": [
+        "How can I track the status of my loan application?",
+        "Is there a way to get updates on my loan processing?"
+      ],
+      "response": [
+        "You can track the status of your loan application online through our website portal or mobile app. Additionally, our customer service representatives can provide updates over the phone or via email upon request."
+      ]
+    },
+    {
+      "tag": "loan_repayment_options",
+      "input": [
+        "Are there flexible repayment options available?",
+        "Can I customize my loan repayment schedule?"
+      ],
+      "response": [
+        "Yes, we offer flexible repayment options to accommodate your financial needs. You can choose from various repayment schedules, including monthly, bi-monthly, or quarterly payments. Additionally, we may offer options for grace periods or loan term extensions in certain circumstances."
+      ]
+    },
+    {
+      "tag": "loan_interest_calculation",
+      "input": [
+        "How is the interest on the loan calculated?",
+        "Can you explain the interest calculation method for your loans?"
+      ],
+      "response": [
+        "Interest on loans is typically calculated using either simple interest or compound interest methods. The specific calculation method and interest rates vary depending on the loan type and terms. You can find detailed information about interest calculations on our website or by consulting with our loan officers."
+      ]
+    },
+    {
+      "tag": "loan_security_requirements",
+      "input": [
+        "Do I need to provide security or guarantors for the loan?",
+        "What are the security requirements for loan approval?"
+      ],
+      "response": [
+        "Security requirements vary depending on the loan amount, type, and risk assessment. While some loans may require collateral or guarantors, others may not. Our loan officers can provide detailed information about security requirements based on your specific loan application."
+      ]
+    },
+    {
+      "tag": "cancellation_process",
+      "input": [
+        "How can I cancel my loan application?",
+        "What is the procedure for cancelling a loan after approval?"
+      ],
+      "response": [
+        "You can cancel your loan application at any time before signing the loan agreement. After approval, cancelling a loan may involve certain penalties or fees, depending on the terms and conditions of the loan agreement. Contact our customer service team to initiate the cancellation process and discuss any associated implications."
+      ]
+    },
+    {
+      "tag": "approval_time",
+      "input": [
+        "How long does it take to get loan approval?",
+        "What is the typical processing time for loan approval?"
+      ],
+      "response": [
+        "The time taken for loan approval varies depending on factors such as the type of loan, the completeness of your application, and the bank's internal processes. Our goal is to process loan applications as quickly as possible while ensuring thorough evaluation. You can check the status of your application or inquire about estimated processing times with our customer service representatives."
+      ]
+    },
+    {
+      "tag": "processing_fee",
+      "input": [
+        "Is there a processing fee for loan applications?",
+        "Do I need to pay any fees for loan processing?"
+      ],
+      "response": [
+        "Yes, there may be a processing fee associated with loan applications. The amount of the fee varies depending on the type and amount of the loan. Our website or loan officers can provide detailed information about processing fees applicable to your specific loan application."
+      ]
+    },
+    {
+      "tag": "disbursement_options",
+      "input": [
+        "How will I receive the loan amount once approved?",
+        "What are the disbursement options for loan funds?"
+      ],
+      "response": [
+        "Once your loan is approved, the funds can be disbursed directly to your bank account or provided in the form of a check, depending on your preference and the bank's policies. Our customer service representatives can assist you in selecting the most convenient disbursement option."
+      ]
+    },
+    {
+      "tag": "term_extension",
+      "input": [
+        "Can I extend the term of my loan?",
+        "Is it possible to request an extension on my loan repayment period?"
+      ],
+      "response": [
+        "In certain circumstances, you may be eligible to request an extension on the term of your loan repayment period. Extensions are subject to approval and may incur additional fees or interest charges. Contact our customer service team to discuss your options for extending your loan term."
+      ]
+    },
+    {
+      "tag": "account_management",
+      "input": [
+        "How can I manage my loan account online?",
+        "Is there an online portal for managing loan accounts?"
+      ],
+      "response": [
+        "Yes, we provide online banking services that allow you to conveniently manage your loan account from anywhere, at any time. Through our secure online portal or mobile app, you can view your loan balance, make payments, set up automatic transfers, and access account statements."
+      ]
+    },
+    {
+      "tag": "insurance_options",
+      "input": [
+        "Do you offer loan insurance options?",
+        "Can I purchase insurance to cover my loan payments?"
+      ],
+      "response": [
+        "Yes, we offer loan insurance options to help protect you and your family in the event of unforeseen circumstances such as disability, illness, or death. Loan insurance can provide peace of mind by covering loan payments in certain situations. Contact our insurance specialists to explore insurance options for your loan."
+      ]
+    },
+    {
+      "tag": "cancellation_deadline",
+      "input": [
+        "Is there a deadline for cancelling my loan after approval?",
+        "What is the timeframe for cancelling a loan without penalty?"
+      ],
+      "response": [
+        "The deadline for cancelling a loan after approval may vary depending on the terms and conditions of the loan agreement. In general, it's advisable to review the terms carefully and act promptly if you decide to cancel the loan. Contact our customer service team to inquire about the cancellation deadline and any associated penalties or fees."
+      ]
+    },
+    {
+      "tag": "repayment_grace_period",
+      "input": [
+        "Is there a grace period for loan repayments?",
+        "Do you offer a grace period before loan repayments start?"
+      ],
+      "response": [
+        "Yes, we may offer a grace period before loan repayments start, depending on the type of loan and your individual circumstances. During the grace period, you may not be required to make payments or may have reduced payments. Contact our customer service team to inquire about the availability of a grace period for your loan."
+      ]
+    },
+    {
+      "tag": "application_restrictions",
+      "input": [
+        "Are there any restrictions on who can apply for a loan?",
+        "Do you have any eligibility criteria for loan applicants?"
+      ],
+      "response": [
+        "Yes, there are certain eligibility criteria and restrictions for loan applicants, including factors such as age, income, credit history, and employment status. Our loan officers can provide detailed information about eligibility criteria and help assess your suitability for a loan."
+      ]
+    },
+    {
+      "tag": "prepayment_options",
+      "input": [
+        "Can I make prepayments on my loan?",
+        "Do you allow early repayment of loans?"
+      ],
+      "response": [
+        "Yes, you can make prepayments on your loan, and we encourage responsible financial management. Early repayment of loans may help reduce interest costs and shorten the loan term. Contact our loan specialists to discuss prepayment options and any associated terms or fees."
+      ]
+    },
+    {
+      "tag": "security_release_process",
+      "input": [
+        "How can I release the security provided for my loan?",
+        "What is the process for releasing collateral or guarantors after loan repayment?"
+      ],
+      "response": [
+        "Once your loan is fully repaid, you may be eligible to release the security provided, such as collateral or guarantors. The release process typically involves submitting relevant documents and requests to the bank for verification. Contact our customer service team to initiate the security release process."
+      ]
+    },
+    {
+      "tag": "refinancing_criteria",
+      "input": [
+        "What are the criteria for loan refinancing?",
+        "How do I know if I'm eligible to refinance my loan?"
+      ],
+      "response": [
+        "Eligibility criteria for loan refinancing vary depending on factors such as your creditworthiness, loan repayment history, and current financial situation. Our loan specialists can assess your eligibility and provide guidance on the refinancing process."
+      ]
+    },
+    {
+      "tag": "account_closure",
+      "input": [
+        "How can I close my loan account?",
+        "What is the process for closing a loan account after full repayment?"
+      ],
+      "response": [
+        "Once your loan is fully repaid, you can request to close your loan account. The closure process typically involves submitting a request to the bank and settling any outstanding fees or charges. Contact our customer service team to initiate the loan account closure process."
+      ]
+    },
+    {
+      "tag": "default_prevention_tips",
+      "input": [
+        "What can I do to prevent defaulting on my loan?",
+        "Do you have any tips for avoiding loan default?"
+      ],
+      "response": [
+        "To avoid defaulting on your loan, it's essential to manage your finances responsibly, make timely payments, and communicate with the bank if you encounter financial difficulties. Creating a budget, setting up reminders for payments, and seeking financial advice if needed can help prevent default."
+      ]
+    },
+    {
+      "tag": "restructuring_options",
+      "input": [
+        "Do you offer loan restructuring options?",
+        "Can I request to restructure my loan?"
+      ],
+      "response": [
+        "Yes, we offer loan restructuring options to assist customers facing financial challenges. Loan restructuring may involve modifying the repayment schedule, extending the loan term, or adjusting the interest rate. Contact our loan specialists to discuss your options for loan restructuring."
+      ]
+    },
+    {
+      "tag": "assistance_programs",
+      "input": [
+        "Are there any assistance programs available for loan repayment?",
+        "Do you offer hardship assistance for loan payments?"
+      ],
+      "response": [
+        "Yes, we understand that unforeseen circumstances may affect your ability to repay your loan. We offer assistance programs to help customers facing financial hardship. These programs may include temporary payment arrangements, loan modifications, or financial counseling. Contact our customer service team to inquire about available assistance programs."
+      ]
+    },
+    {
+      "tag": "closure_requirements",
+      "input": [
+        "What are the requirements for closing my loan account?",
+        "Do I need to fulfill any conditions before closing my loan?"
+      ],
+      "response": [
+        "Before closing your loan account, you may need to ensure that all outstanding payments, fees, and charges are settled. Additionally, any collateral or security provided for the loan may need to be released. Contact our customer service team to confirm the specific requirements for closing your loan account."
+      ]
+    },
+    {
+      "tag": "application_limits",
+      "input": [
+        "Is there a limit to the number of loan applications I can submit?",
+        "Can I apply for multiple loans at the same time?"
+      ],
+      "response": [
+        "While there may not be a strict limit on the number of loan applications you can submit, each application will undergo a thorough assessment based on your creditworthiness and financial capacity. Applying for multiple loans simultaneously may impact your credit score and borrowing capacity. Contact our loan specialists for personalized advice on managing multiple loan applications."
+      ]
+    },
+    {
+      "tag": "interest_rate_adjustments",
+      "input": [
+        "Can the interest rate on my loan be adjusted during the repayment period?",
+        "Do you offer options for adjusting the loan interest rate?"
+      ],
+      "response": [
+        "In certain cases, we may offer options for adjusting the interest rate on your loan during the repayment period. This may include refinancing the loan, negotiating with the bank, or taking advantage of promotional offers. Contact our loan specialists to discuss potential options for adjusting your loan interest rate."
+      ]
+    },
+    {
+      "tag": "application_feedback",
+      "input": [
+        "How can I provide feedback on the loan application process?",
+        "Is there a way to provide feedback on my experience with the loan application?"
+      ],
+      "response": [
+        "We value your feedback and strive to continuously improve our services. You can provide feedback on the loan application process by contacting our customer service team, filling out feedback forms on our website, or participating in customer satisfaction surveys. Your input helps us enhance the customer experience."
+      ]
+    },
+    {
+      "tag": "account_statement_request",
+      "input": [
+        "How can I request a statement for my loan account?",
+        "Is there a way to obtain a statement of my loan transactions?"
+      ],
+      "response": [
+        "You can request a statement for your loan account by contacting our customer service team or accessing your account online through our secure portal or mobile app. Loan statements provide details of your transactions, including payments made, outstanding balance, and interest accrued."
+      ]
+    },
+    {
+      "tag": "closing_procedures",
+      "input": [
+        "What are the procedures for closing my loan account?",
+        "Can you explain the steps involved in closing a loan?"
+      ],
+      "response": [
+        "The procedures for closing your loan account typically involve submitting a request to the bank, settling any outstanding payments or fees, and obtaining confirmation of loan closure. Once all requirements are fulfilled, the bank will update your account status accordingly. Contact our customer service team for assistance with the loan closing process."
+      ]
+    },
+    {
+      "tag": "early_repayment_penalties",
+      "input": [
+        "Are there any penalties for repaying my loan early?",
+        "Do I incur fees for making early repayments on my loan?"
+      ],
+      "response": [
+        "Some loan agreements may include provisions for early repayment penalties or fees. These penalties are designed to compensate the lender for potential lost interest income due to early loan closure. Contact our customer service team or refer to your loan agreement for information on early repayment penalties."
+      ]
+    },
+    {
+      "tag": "application_status_check",
+      "input": [
+        "How can I check the status of my loan application?",
+        "Is there a way to track the progress of my loan application?"
+      ],
+      "response": [
+        "You can check the status of your loan application by logging into your online account through our website or mobile app. Alternatively, you can contact our customer service team and provide your application reference number for assistance with tracking your application."
+      ]
+    },
+    {
+      "tag": "product_comparison",
+      "input": [
+        "Can you help me compare different loan products?",
+        "Is there a tool or service available for comparing loan options?"
+      ],
+      "response": [
+        "Our loan specialists can assist you in comparing different loan products based on factors such as interest rates, repayment terms, and eligibility criteria. Additionally, you can use our online loan comparison tool available on our website to explore and compare various loan options."
+      ]
+    },
+    {
+      "tag": "application_supporting_documents",
+      "input": [
+        "What supporting documents are required for a loan application?",
+        "Can you provide a list of documents needed for a loan application?"
+      ],
+      "response": [
+        "The specific supporting documents required for a loan application may vary depending on the type of loan and your individual circumstances. Commonly requested documents include identification proof, income documents, bank statements, and collateral details. Contact our customer service team or refer to our website for a comprehensive list of required documents."
+      ]
+    },
+    {
+      "tag": "interest_calculation_methods",
+      "input": [
+        "How is interest calculated on my loan?",
+        "Can you explain the method used to calculate interest on loans?"
+      ],
+      "response": [
+        "Interest on loans is typically calculated using various methods such as simple interest, compound interest, or reducing balance method. The specific calculation method may depend on factors such as the loan type, repayment frequency, and interest rate structure. Contact our loan specialists for detailed information on interest calculation methods."
+      ]
+    },
+    {
+      "tag": "default_consequences",
+      "input": [
+        "What are the consequences of defaulting on my loan?",
+        "Can you explain the implications of loan default?"
+      ],
+      "response": [
+        "Defaulting on your loan can have serious consequences, including damage to your credit score, legal action by the lender, repossession of collateral, and additional fees or penalties. It's important to communicate with the bank if you're experiencing financial difficulties to explore alternative solutions and avoid default."
+      ]
+    },
+    {
+      "tag": "account_security",
+      "input": [
+        "How is my loan account information secured?",
+        "What measures are in place to protect the security of my loan account?"
+      ],
+      "response": [
+        "We prioritize the security of your loan account information and employ various measures to safeguard it against unauthorized access or misuse. These measures may include encryption, multi-factor authentication, regular security audits, and compliance with data protection regulations. Contact our customer service team for more information on account security measures."
+      ]
+    },
+    {
+      "tag": "grace_period_extension",
+      "input": [
+        "Can I request an extension on the grace period for loan repayments?",
+        "Is it possible to extend the grace period for loan payments?"
+      ],
+      "response": [
+        "Yes, in certain circumstances, you may be able to request an extension on the grace period for loan repayments. Contact our customer service team to discuss your situation and explore the possibility of extending the grace period."
+      ]
+    },
+    {
+      "tag": "term_modification",
+      "input": [
+        "Can I modify the repayment term of my loan?",
+        "Is there a way to change the loan term after it has been approved?"
+      ],
+      "response": [
+        "Depending on the type of loan and your individual circumstances, you may have options to modify the repayment term of your loan. This could involve extending the loan term to reduce monthly payments or shortening the term to pay off the loan faster. Contact our loan specialists to discuss potential modifications to your loan term."
+      ]
+    },
+    {
+      "tag": "application_approval_criteria",
+      "input": [
+        "What criteria are used to approve loan applications?",
+        "How does the bank decide whether to approve a loan application?"
+      ],
+      "response": [
+        "Loan applications are evaluated based on various criteria, including your creditworthiness, income stability, employment status, existing debts, and repayment capacity. The bank may also consider factors such as collateral, loan purpose, and regulatory requirements. Contact our customer service team for more information on loan application approval criteria."
+      ]
+    },
+    {
+      "tag": "refinancing_advantages",
+      "input": [
+        "What are the advantages of refinancing my loan?",
+        "Can you explain the benefits of loan refinancing?"
+      ],
+      "response": [
+        "Refinancing your loan may offer several advantages, such as obtaining a lower interest rate, reducing monthly payments, consolidating multiple debts into a single loan, or accessing additional funds. Additionally, refinancing could provide flexibility in managing your finances and achieving long-term financial goals. Contact our loan specialists to explore the potential benefits of loan refinancing."
+      ]
+    },
+    {
+      "tag": "application_rejection_reasons",
+      "input": [
+        "Why was my loan application rejected?",
+        "Can you provide reasons for the rejection of my loan application?"
+      ],
+      "response": [
+        "Loan applications may be rejected for various reasons, including inadequate income or employment stability, poor credit history, insufficient collateral, or failure to meet eligibility criteria. Additionally, regulatory requirements and bank policies may impact the approval process. Contact our customer service team to inquire about the specific reasons for the rejection of your loan application."
+      ]
+    },
+    {
+      "tag": "application_document_verification",
+      "input": [
+        "How long does it take to verify supporting documents for a loan application?",
+        "What is the timeframe for document verification during the loan application process?"
+      ],
+      "response": [
+        "The timeframe for verifying supporting documents during the loan application process may vary depending on factors such as document complexity, volume of applications, and internal processing procedures. Our team strives to complete document verification promptly to expedite the application process. Contact our customer service team for updates on document verification status."
+      ]
+    },
+    {
+      "tag": "application_assistance",
+      "input": [
+        "Can I get assistance with filling out my loan application?",
+        "Is there support available for completing the loan application process?"
+      ],
+      "response": [
+        "Yes, our customer service team and loan specialists are available to provide assistance with completing your loan application. Whether you have questions about required documents, eligibility criteria, or application procedures, we're here to help. Contact us for personalized support and guidance."
+      ]
+    },
+    {
+      "tag": "security_requirements",
+      "input": [
+        "What are the requirements for providing security or collateral for a loan?",
+        "Can you explain the process of securing a loan with collateral?"
+      ],
+      "response": [
+        "Securing a loan with collateral typically requires providing assets such as real estate, vehicles, or financial investments as security against the loan. The specific requirements for collateral may vary depending on the type and amount of the loan, as well as the lender's policies. Contact our loan specialists for detailed information on the collateral requirements for your loan."
+      ]
+    },
+    {
+      "tag": "prequalification_process",
+      "input": [
+        "Is there a prequalification process for loans?",
+        "Can I get prequalified for a loan before applying?"
+      ],
+      "response": [
+        "Yes, we offer a prequalification process that allows you to assess your eligibility and potential loan options before formally applying. Prequalification involves providing basic information about your income, expenses, and credit profile to receive an initial assessment of your borrowing capacity. Contact our customer service team or visit our website to learn more about the prequalification process."
+      ]
+    },
+    {
+      "tag": "disbursement_methods",
+      "input": [
+        "How are loan funds disbursed?",
+        "Can you explain the disbursement process for approved loans?"
+      ],
+      "response": [
+        "Loan funds are typically disbursed through various methods, including direct deposit to your bank account, issuance of a check, or transfer to a designated account. The specific disbursement method may depend on factors such as the loan type, amount, and borrower preferences. Contact our customer service team for information on the disbursement process for your loan."
+      ]
+    },
+    {
+      "tag": "application_review_process",
+      "input": [
+        "What happens during the review process for loan applications?",
+        "Can you explain how loan applications are evaluated and reviewed?"
+      ],
+      "response": [
+        "During the review process, loan applications are evaluated based on criteria such as creditworthiness, income stability, employment status, and debt-to-income ratio. Our team conducts a thorough assessment to determine eligibility, assess risk, and ensure compliance with regulatory requirements. Contact our customer service team for updates on the status of your loan application review."
+      ]
+    },
+    {
+      "tag": "product_terms_and_conditions",
+      "input": [
+        "Where can I find the terms and conditions for your loan products?",
+        "Is there a document outlining the terms and conditions of your loan offerings?"
+      ],
+      "response": [
+        "The terms and conditions for our loan products are available in loan agreements, product brochures, and terms and conditions documents provided during the application process. You can also access this information on our website or by contacting our customer service team. It's important to review and understand the terms and conditions before proceeding with a loan application."
+      ]
+    },
+    {
+      "tag": "early_repayment_options",
+      "input": [
+        "What options do I have for repaying my loan early?",
+        "Can I make early repayments on my loan, and are there any benefits?"
+      ],
+      "response": [
+        "You may have options for repaying your loan early, such as making additional payments or paying off the loan in full before the scheduled maturity date. Early repayment can help reduce interest costs, shorten the loan term, and improve your financial flexibility. Contact our customer service team to discuss early repayment options for your loan."
+      ]
+    },
+    {
+      "tag": "application_processing_fee",
+      "input": [
+        "Is there a processing fee for loan applications?",
+        "Do I need to pay a fee when applying for a loan?"
+      ],
+      "response": [
+        "Some loan applications may require a processing fee to cover administrative costs associated with reviewing and processing the application. The specific fee amount and payment terms may vary depending on the loan type and lender's policies. Contact our customer service team for information on processing fees for your loan application."
+      ]
+    },
+    {
+      "tag": "application_deadlines",
+      "input": [
+        "Are there deadlines for submitting loan applications?",
+        "What is the timeline for submitting a loan application?"
+      ],
+      "response": [
+        "While there may not be strict deadlines for submitting loan applications, it's advisable to apply in a timely manner to allow sufficient processing time and avoid delays. Factors such as loan availability, documentation requirements, and processing times may influence the timeline for submitting your application. Contact our customer service team for assistance with meeting application deadlines."
+      ]
+    },
+    {
+      "tag": "branch",
+      "input": [
+        "all branches",
+        "branch",
+        "i wan to all branch",
+        "sri lankan branch",
+        "boc branches"
+      ],
+      "response": [
+        "448\tAddalachchenai ,<br> 487\tAdikarigama ,<br> 657\tAgalawatta ,<br> 488\tAgarapathana ,<br> 276\tAhangama ,<br> 754\tAhungalla ,<br> 590\tAkkaraipattu ,<br> 489\tAkurana ,<br> 613\tAkuressa ,<br> 812\tAladeniya ,<br> 449\tAlankerny ,<br> 380\tAlaveddy ,<br> 768\tAlawathugoda ,<br> 498\tAlawwa ,<br> 680\tAluthgama ,<br> 32\tAluthkade ,<br> 277\tAluthwala ,<br> 47\tAmbalangoda ,<br> 537\tAmbalantota ,<br> 329\tAmbanpola ,<br> 21\tAmpara ,<br> 548\tAnamaduwa ,<br> 330\tAnawilundawa ,<br> 381\tAndankulam ,<br> 494\tAndiambalama ,<br> 774\tAngunakolapelessa ,<br> 490\tAnkumbura ,<br> 22\tAnuradhapura ,<br> 551\tAnuradhapura Bazzar ,<br> 98\tAnuradhapura New Town ,<br> 451\tAraiyampathy ,<br> 599\tAralaganwila ,<br> 566\tAranayake ,<br> 713\tAsiri Central ,<br> 778\tAtchuvely ,<br> 757\tAthurugiriya ,<br> 530\tAvissawella ,<br> 401\tAyagama ,<br> 540\tBadalkumbura ,<br> 525\tBaddegama ,<br> 11\tBadulla ,<br> 729\tBadulla City ,<br> 662\tBaduraliya ,<br> 652\tBakamuna ,<br> 688\tBalangoda ,<br> 320\tBallaketuwa ,<br> 37\tBambalapitiya ,<br> 665\tBandaragama ,<br> 515\tBandarawela ,<br> 278\tBarawakumbura ,<br> 522\tBatapola ,<br> 679\tBattaramulla ,<br> 12\tBatticaloa ,<br> 452\tBatticaloa Town ,<br> 708\tBatuwatte ,<br> 539\tBeliatta ,<br> 102\tBentota ,<br> 58\tBeruwala ,<br> 579\tBibile ,<br> 554\tBingiriya ,<br> 732\tBiyagama ,<br> 788\tBOC premier ,<br> 699\tBogahakumbura ,<br> 808\tBogaswewa ,<br> 491\tBogawantalawa ,<br> 465\tBokkawala ,<br> 651\tBombuwela ,<br> 711\tBopitiya ,<br> 795\tBoragas ,<br> 646\tBoralesgamuwa ,<br> 668\tBorella  2nd ,<br> 38\tBorella S/G ,<br> 462\tBotanical Gardens Peradeniya ,<br> 311\tBulathkohupitiya ,<br> 673\tBulathsinhala ,<br> 560\tButtala ,<br> 573\tCentral Bus Stand ,<br> 811\tCentral Camp ,<br> 15\tCentral Office ,<br> 672\tCentral Super Market ,<br> 731\tCEYBANK Credit card centre ,<br> 792\tChankanai ,<br> 501\tChavakachcheri ,<br> 382\tCheddikulam ,<br> 630\tChenkalady ,<br> 20\tChilaw ,<br> 436\tChina Bay ,<br> 53\tChunnakam ,<br> 1\tCity Office ,<br> 660\tCorporate ,<br> 822\tCorporate 2nd ,<br> 474\tCourt Complex Kandy ,<br> 715\tDalugama ,<br> 331\tDambadeniya ,<br> 700\tDambagalla ,<br> 576\tDambulla ,<br> 497\tDankotuwa ,<br> 466\tDanture ,<br> 467\tDaulagala ,<br> 567\tDedicated Economic Centre – Meegoda ,<br> 686\tDehiattakandiya ,<br> 634\tDehiowita ,<br> 51\tDehiwala ,<br> 784\tDeiyandara ,<br> 383\tDelft ,<br> 716\tDelgoda ,<br> 717\tDemanhandiya ,<br> 561\tDematagoda ,<br> 528\tDeniyaya ,<br> 642\tDeraniyagala ,<br> 504\tDevinuwara ,<br> 563\tDharga Town ,<br> 273\tDigana ,<br> 469\tDigana Village ,<br> 592\tDikwella ,<br> 433\tDivulapitiya ,<br> 388\tDiyabeduma ,<br> 389\tDiyasenpura ,<br> 260\tDiyatalawa ,<br> 293\tDodangoda ,<br> 390\tDoramadalawa ,<br> 580\tDummalasuriya ,<br> 437\tEastern University ,<br> 57\tEheliyagoda ,<br> 258\tElakanda ,<br> 777\tElectronic Banking Unit ,<br> 701\tElla ,<br> 619\tElpitiya ,<br> 535\tEmbilipitiya ,<br> 312\tEmbilipitiya City ,<br> 313\tEndana ,<br> 674\tEnderamulla ,<br> 692\tEppawala ,<br> 790\tEravur ,<br> 702\tEthiliwewa ,<br> 810\tEthimale ,<br> 476\tEttampitiya ,<br> 60\tFifth City ,<br> 718\tFish Market Peliyagoda ,<br> 615\tGalagedera ,<br> 101\tGalaha ,<br> 391\tGalamuna ,<br> 122\tGalenbindunuwewa ,<br> 432\tGalewela ,<br> 549\tGalgamuwa ,<br> 314\tGaligamuwa ,<br> 653\tGalkiriyagama ,<br> 89\tGalle Bazaar ,<br> 3\tGalle Fort ,<br> 514\tGalnewa ,<br> 45\tGampaha S/G ,<br> 575\tGampola ,<br> 470\tGampola City ,<br> 720\tGanemulla ,<br> 524\tGeli Oya ,<br> 392\tGeneral Hospital, A’ pura ,<br> 471\tGinigathhena ,<br> 669\tGirandurukotte ,<br> 553\tGiriulla ,<br> 786\tGodakawela ,<br> 316\tGonagaldeniya ,<br> 438\tGonagolla ,<br> 643\tGonapola ,<br> 721\tGothatuwa ,<br> 628\tGrandpass ,<br> 393\tHabarana ,<br> 691\tHakmana ,<br> 463\tHaldummulla ,<br> 785\tHali ela ,<br> 85\tHambantota ,<br> 741\tHanwella ,<br> 35\tHaputale ,<br> 365\tHasalaka ,<br> 472\tHatharaliyadda ,<br> 40\tHatton ,<br> 999\tHead Office ,<br> 772\tHemmathagama ,<br> 570\tHettipola ,<br> 609\tHikkaduwa ,<br> 601\tHingurakgoda ,<br> 509\tHingurana ,<br> 569\tHiripitiya ,<br> 568\tHomagama ,<br> 54\tHorana ,<br> 217\tHorowpathana ,<br> 521\tHyde Park ,<br> 770\tIbbagamuwa ,<br> 377\tIllavalai ,<br> 135\tImaduwa ,<br> 453\tIndependent  Square ,<br> 604\tIngiriya ,<br> 87\tInternational Division ,<br> 236\tIpalogama ,<br> 439\tIrakkamam ,<br> 776\tIslamic Banking Unit ,<br> 39\tJa Ela ,<br> 5\tJaffna ,<br> 500\tJaffna 2nd Branch ,<br> 366\tJaffna Bus Stand ,<br> 368\tJaffna Main Street ,<br> 369\tJaffna University ,<br> 600\tJayanthipura ,<br> 59\tKadawatha ,<br> 780\tKadawatha 2nd City ,<br> 502\tKaduruwela ,<br> 608\tKaduwela ,<br> 622\tKahatagasdigiliya ,<br> 507\tKahawatte ,<br> 370\tKaithady ,<br> 645\tKalawana ,<br> 426\tKallady ,<br> 427\tKallar ,<br> 510\tKalmunai ,<br> 589\tKalpitiya ,<br> 16\tKalutara S/G ,<br> 611\tKaluwanchikudy ,<br> 371\tKalviyankadu ,<br> 529\tKamburupitiya ,<br> 771\tKandana ,<br> 23\tKandy City Office ,<br> 753\tKandy City 2nd Office ,<br> 501\tKandy Corporate ,<br> 792\tKandy Digana ,<br> 512\tKandy Katugasthota ,<br> 474\tKandy Kiribathkumbura ,<br> 501\tKandy Kundasale ,<br> 508\tKandy New ,<br> 508\tKandy Nuwara Eliya Road ,<br> 707\tKandy Pagoda ,<br> 530\tKandy Pallekele ,<br> 530\tKandy Peradeniya ,<br> 555\tKandy Polgolla ,<br> 555\tKandy Rikillagaskada ,<br> 507\tKandy Sarasavi Uyana ,<br> 601\tKandy Town ,<br> 601\tKandy Warathamulla ,<br> 775\tKandy William Gopallawa Mawatha ,<br> 503\tKandy Windsor Lane ,<br> 23\tKatana ,<br> 23\tKatana 2nd Office ,<br> 562\tKatana Colombo ,<br> 574\tKathaluwa ,<br> 789\tKathankudy ,<br> 23\tKataragama ,<br> 784\tKaththankudy ,<br> 767\tKatugasthota ,<br> 571\tKatuwana ,<br> 657\tKavantissapura ,<br> 657\tKayts ,<br> 23\tKebithigollewa ,<br> 747\tKekirawa ,<br> 767\tKelaniya ,<br> 689\tKeppitipola ,<br> 631\tKesbewa ,<br> 57\tKethsirigama ,<br> 786\tKettarama ,<br> 782\tKilinochchi ,<br> 762\tKinniya ,<br> 23\tKirama ,<br> 23\tKirigalwewa ,<br> 682\tKiribathgoda ,<br> 514\tKiridiwela ,<br> 702\tKirillawala ,<br> 655\tKirindawa ,<br> 23\tKirindiwela ,<br> 794\tKithulpe ,<br> 763\tKochchikade ,<br> 764\tKoddankulam ,<br> 764\tKodikamam ,<br> 764\tKodikamam ,<br> 654\tKodimunai ,<br> 765\tKollupitiya ,<br> 726\tKollupitiya City ,<br> 637\tKomarika ,<br> 506\tKottawa ,<br> 734\tKotugoda ,<br> 638\tKotugoda City ,<br> 615\tKotugoda Town ,<br> 530\tKurunegala ,<br> 530\tKurunegala 2nd Office ,<br> 530\tKurunegala Bus Stand ,<br> 665\tKurunegala Central ,<br> 564\tKurunegala City ,<br> 764\tKurunegala Country ,<br> 456\tKurunegala Market ,<br> 764\tKurunegala Road ,<br> 675\tKurunegala Town ,<br> 529\tKurunegala Uc Road ,<br> 764\tKurunegala Urban Council Road ,<br> 641\tKurunegala Victoria Garden ,<br> 764\tKurunegala Wariyapola Road ,<br> 521\tKurunegala Wayamba ,<br> 764\tKurunegala Wewa Road ,<br> 701\tKurunegala Wellawaya Road ,<br> 612\tKurunegala Yagoda ,<br> 766\tKurunegala Yatiwela Road ,<br> 635\tKurunegala Y<br>"
+      ]
+    }
+  ]
+}
