@@ -1,31 +1,33 @@
 # import the lib
-import json
-import pickle
-import random
-import string
+import json  # load the dataset from a JSON file.
+import pickle  # For saving and loading preprocessed data
+import random  # For shuffling the training data
+import string  # For handling punctuation
 
-import nltk
-import numpy as np
-import matplotlib.pyplot as plt
+import nltk  # Natural Language Toolkit for NLP tasks
+import numpy as np  # For numerical operations and data manipulation
+import matplotlib.pyplot as plt  # For plotting training metrics
 from nltk.stem import WordNetLemmatizer
 from tensorflow.keras.callbacks import ModelCheckpoint,EarlyStopping
 from tensorflow.keras.layers import Dense, Dropout
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.optimizers import Adam
-
-lemmatizer = WordNetLemmatizer()
+# tensorflow.keras: For building and training the neural network model.
 
 nltk.download('punkt')
 nltk.download('wordnet')
+# Downloads the necessary NLTK data for tokenization and lemmatization
 
+lemmatizer = WordNetLemmatizer()
+# Initializes the WordNet lemmatizer for converting words to their base form
 
 def train_model():
-    # inport the data set
+    # load the json data set
     with open('content.json') as content:
         data1 = json.load(content)
         # print(data1)
 
-    # genarate all data to list
+    # generate all data to list
     tags = []  # Initializes an empty list
     input_word = []  # Initializes an empty list
     response = {}  # Initializes an empty dictionary
@@ -35,13 +37,13 @@ def train_model():
         # print(response)
 
         # tokenize = splits up sentences into words
-        for inputsval in intent['input']:
+        for input_value in intent['input']:
             # nltk library used to tokenize each input value into individual words.
-            word_list = nltk.word_tokenize(inputsval)
+            word_list = nltk.word_tokenize(input_value)
             input_word.extend(word_list)
 
             input_and_tag.append((word_list, intent['tag']))
-            # print("inputAndtag :",inputAndtag)
+            # print("tags :",input_and_tag)
 
             if intent['tag'] not in tags:
                 tags.append(intent['tag'])

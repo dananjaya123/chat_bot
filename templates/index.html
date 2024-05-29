@@ -115,52 +115,54 @@
         }
 
         .message {
-        margin-bottom: 10px;
-        padding: 10px;
-        border-radius: 10px;
-        background: rgb(227, 115, 15);
-        color: white;
-        display: inline-block;
-        max-width: 70%;
-        text-align: center; /* Center text */
-    }
+            margin-bottom: 10px;
+            padding: 10px;
+            border-radius: 10px;
+            background: rgb(227, 115, 15);
+            color: white;
+            display: inline-block;
+            max-width: 70%;
+            text-align: center; /* Center text */
+        }
 
-    .message.user {
-        align-self: flex-end;
-        background-color: #11316c;
-        color: white;
-    }
+        .message.user {
+            align-self: flex-end;
+            background-color: #11316c;
+            color: white;
+        }
 
-    .message.bot {
-        align-self: flex-start;
-        background-color: rgb(74, 120, 206);
-        color: white;
-        display: flex;
-        align-items: center;
-        border-radius: 10px;
-        padding: 10px;
-    }
+        .message.bot {
+            align-self: flex-start;
+            background-color: rgb(74, 120, 206);
+            color: white;
+            display: flex;
+            align-items: center;
+            border-radius: 10px;
+            padding: 10px;
+        }
 
-    .message.bot .icon {
-        margin-right: 10px;
-        border-radius: 50%;
-        background-color: #e3730f;
-        padding: 1px;
-    }
+        .message.bot .icon {
+            margin-right: 10px;
+            border-radius: 50%;
+            background-color: #e3730f;
+            padding: 1px;
+        }
 
-    .message .timestamp {
-        display: block;
-        font-size: 0.5em;
-        margin-top: 5px;
-        color: rgba(255, 255, 255, 0.6);
-    }
+        .message .timestamp {
+            display: block;
+            font-size: 0.5em;
+            margin-top: 5px;
+            color: rgba(255, 255, 255, 0.6);
+        }
     </style>
 </head>
 <body>
 <!-- Navigation Bar -->
 <nav class="navbar navbar-expand-sm navbar-dark" style="background-color: #0d2449">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#">Chatbot</a>
+        <a class="navbar-brand" href="#">
+            <img src="../assets/img/boc-logo.svg" alt="Chatbot" style="height: 40px;">
+        </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -168,7 +170,7 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    <a class="nav-link active" aria-current="page" href="#">HOME</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">ABOUT US</a>
@@ -181,17 +183,50 @@
                 </li>
             </ul>
             <form class="d-flex">
-                   <a class="btn btn-outline btn-sm" type="button" href="{{ url_for('login') }}"
+                <a class="btn btn-outline btn-sm" type="button" href="{{ url_for('login') }}"
                    style="background-color: rgb(255, 157, 64);">Login</a>
             </form>
         </div>
     </div>
 </nav>
 
+<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+                aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="../assets/img/slider01.jpg" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+            <img src="../assets/img/slider02.jpg" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+            <img src="../assets/img/slider03.jpg" class="d-block w-100" alt="...">
+        </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+            data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+            data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
+
 <!-- Chat Icon -->
 <div class="chat-icon" onclick="toggleChat()">
-    <img src="../assets/img/chat.png"  alt="Chat Icon">
+    <img src="../assets/img/chat.png" alt="Chat Icon">
 </div>
+
 
 <!-- Main Content -->
 <div class="content" id="chatContent">
@@ -247,7 +282,7 @@
         }
     }
 
- function appendMessage(sender, message) {
+    function appendMessage(sender, message) {
         const chatBox = document.getElementById('chat-box');
         const messageElement = document.createElement('div');
         messageElement.className = `message ${sender}`;
@@ -261,7 +296,7 @@
             iconElement.style.height = '30px';
 
             const textElement = document.createElement('span');
-            textElement.textContent = message;
+            textElement.innerHTML  = message;
 
             messageElement.appendChild(iconElement);
             messageElement.appendChild(textElement);
