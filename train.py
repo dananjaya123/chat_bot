@@ -162,7 +162,6 @@ def train_model():
         callbacks=[model_checkpoint, early_stopping]
     )
 
-
     # Plots the training and validation accuracy and loss curves to visualize model performance
     plt.plot(hist.history['accuracy'], label='training accuracy')
     plt.plot(hist.history['val_accuracy'], label='validation accuracy')

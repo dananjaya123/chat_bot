@@ -21,9 +21,6 @@ model = load_model('chatbot_model.keras')
 with open('content.json') as content:
     intents = json.load(content)
 
-
-# ============================
-
 def tokenize_and_lemmatize(sentence):
     sentence_words = nltk.word_tokenize(sentence)
     sentence_words = [lemmatizer.lemmatize(word) for word in sentence_words]
@@ -75,10 +72,6 @@ def generate_response(intents_list):
             break
     return result
 
-
-# ==============================
-
-# Function to predict intent
 def get_chatbot_response(message):
     user_input = message
     intents_list = classify_intent(user_input)
