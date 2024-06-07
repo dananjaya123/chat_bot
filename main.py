@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request, jsonify
 from train import train_model
-from chatbot import predict_intent
+from chatbot import get_chatbot_response
 
 app = Flask(__name__, static_folder='assets')
 
@@ -34,7 +34,7 @@ def predict():
             raise ValueError("No 'message' field in request JSON")
         message = data['message']
         # print(f"Received message: {message}")
-        predicted_intent = predict_intent(message)
+        predicted_intent = get_chatbot_response(message)
         return jsonify({'predicted_intent': predicted_intent})
     except Exception as e:
         # print(f"Error: {e}")
