@@ -13,7 +13,7 @@ lemmatizer = WordNetLemmatizer()
 nltk.download('punkt')
 
 # Load Pre-trained Data and Model
-words_pkl = pickle.load(open('words.pkl', 'rb'))
+words_pkl = pickle.load(open('words.pkl', 'rb')) #read-binary
 tags_pkl = pickle.load(open('tags.pkl', 'rb'))
 model = load_model('chatbot_model.keras')
 
@@ -44,6 +44,7 @@ def bag_of_words(sentence):
 
 
 def classify_intent(sentence):
+
     bow = bag_of_words(sentence)
     #  (bag of words) array is converted into a NumPy array and passed to the model.predict function
     res = model.predict(np.array([bow]))[0]
