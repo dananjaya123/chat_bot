@@ -13,16 +13,13 @@ lemmatizer = WordNetLemmatizer()
 nltk.download('punkt')
 
 # Load Pre-trained Data and Model
-words_pkl = pickle.load(open('words.pkl', 'rb'))
+words_pkl = pickle.load(open('words.pkl', 'rb')) #read-binary
 tags_pkl = pickle.load(open('tags.pkl', 'rb'))
 model = load_model('chatbot_model.keras')
 
 # inport the json data
 with open('content.json') as content:
     intents = json.load(content)
-
-
-# ============================
 
 def tokenize_and_lemmatize(sentence):
     sentence_words = nltk.word_tokenize(sentence)
@@ -47,6 +44,7 @@ def bag_of_words(sentence):
 
 
 def classify_intent(sentence):
+
     bow = bag_of_words(sentence)
     #  (bag of words) array is converted into a NumPy array and passed to the model.predict function
     res = model.predict(np.array([bow]))[0]
@@ -75,10 +73,6 @@ def generate_response(intents_list):
             break
     return result
 
-
-# ==============================
-
-# Function to predict intent
 def get_chatbot_response(message):
     user_input = message
     intents_list = classify_intent(user_input)
