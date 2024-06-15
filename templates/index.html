@@ -264,7 +264,7 @@
     async function sendMessage() {
         const userInput = document.getElementById('user-input');
         const message = userInput.value.trim();
-        const regex = /^[a-zA-Z]+$/;
+        const regex = /^[a-zA-Z\s]+$/;
         if (message) {
             if (regex.test(message)) {
                 appendMessage('user', message);
