@@ -53,7 +53,7 @@ def train_model():
                 tags.append(intent['tag'])
 
 
-#lemmatize the words to reduce them to their base or form and sort them in alphabetical order
+#lemmatize the words to reduce them to their base or root form
     lemmatized_words = []
     for word in input_word:
         # Check if the word is not a punctuation mark(ex '',?$)
@@ -73,7 +73,7 @@ def train_model():
     pickle.dump(tags, open('tags.pkl', 'wb'))  # 'wb': Write-binary mode
 
 
-#create the training data by converting words into numerical features using a "bag of words" approach.
+#create the training data by converting words into numerical features using a "bag of words".
 #also create the corresponding output vectors
     training = []
     # tag length wise create arry [0,0..]
@@ -136,8 +136,8 @@ def train_model():
 
 
 
-# build a neural network with two hidden layers, each followed by a dropout layer to prevent overfitting.
-#output layer uses a softmax activation function for multi-class classification.
+# build a neural network with two hidden layers,
+# each followed by a dropout layer to prevent overfitting.
 
     #Initializes a new Sequential model, which is a linear stack of  layers-by-layer.(dense and dropout layers)
     model = Sequential()
@@ -147,7 +147,7 @@ def train_model():
     model.add(Dropout(0.5))
     model.add(Dense(128, activation='relu'))
     model.add(Dropout(0.5))
-    #output layer of the model.
+# output layer uses a softmax activation function for multi-class classification.
     model.add(Dense(len(train_y[0]), activation='softmax'))
 
     # optimizer adjusts the weights of the connections in the model to minimize the loss
@@ -159,7 +159,7 @@ def train_model():
 
 # Define model checkpoint to save the best model
     model_checkpoint = ModelCheckpoint('chatbot_model.keras', save_best_only=True)
-# use early stopping to prevent overfitting by stopping training if the validation loss does not improve for 10 epochs.
+# overfitting stopping training if the validation loss does not improve for 10 epochs.
     early_stopping = EarlyStopping(monitor='val_loss', patience=10, restore_best_weights=True)
 
 
