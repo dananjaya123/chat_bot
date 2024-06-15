@@ -154,7 +154,8 @@
             margin-top: 5px;
             color: rgba(255, 255, 255, 0.6);
         }
-        .message a{
+
+        .message a {
             color: black;
         }
         
@@ -264,24 +265,29 @@
     async function sendMessage() {
         const userInput = document.getElementById('user-input');
         const message = userInput.value.trim();
+        const regex = /^[a-zA-Z]+$/;
         if (message) {
-            appendMessage('user', message);
-            userInput.value = '';
+            if (regex.test(message)) {
+                appendMessage('user', message);
+                userInput.value = '';
 
-            try {
-                const response = await fetch('/predict', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify({message: message})
-                });
+                try {
+                    const response = await fetch('/predict', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({message: message})
+                    });
 
-                const data = await response.json();
-                appendMessage('bot', data.predicted_intent || data.error);
-            } catch (error) {
-                console.error('Error:', error);
-                appendMessage('bot', 'Error connecting to server.');
+                    const data = await response.json();
+                    appendMessage('bot', data.predicted_intent || data.error);
+                } catch (error) {
+                    console.error('Error:', error);
+                    appendMessage('bot', 'Error connecting to server.');
+                }
+            } else {
+                appendMessage('bot', 'Invalid input: Only alphabetic characters are allowed.');
             }
         }
     }
@@ -300,7 +306,7 @@
             iconElement.style.height = '30px';
 
             const textElement = document.createElement('span');
-            textElement.innerHTML  = message;
+            textElement.innerHTML = message;
 
             messageElement.appendChild(iconElement);
             messageElement.appendChild(textElement);
