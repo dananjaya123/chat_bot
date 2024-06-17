@@ -74,7 +74,7 @@ def train_model():
 
 
 #create the training data by converting words into numerical features using a "bag of words".
-#also create the corresponding output vectors
+#also create the corresponding output text data to convert numaricl vectors
     training = []
     # tag length wise create arry [0,0..]
     output_empty = [0] * len(tags)
