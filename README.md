@@ -27,14 +27,15 @@ POST /train: Train the model and save it.
 POST /predict: Predict the intent of a given message and respond accordingly.
 
 ============== Project Structure ===================
-app.py: Main Flask application file.
-train.py: Script for training the model.
-chatbot.py: Script for handling the chatbot responses.
-assets/: Directory for storing static files such as images.
-templates/: Directory for HTML templates.
-content.json: Dataset file for training the model.
-words.pkl and tags.pkl: Pickle files for preprocessed data.
-chatbot_model.keras: Saved trained model.
+
+- **app.py**: Main Flask application file.
+- **train.py**: Script for training the model.
+- **chatbot.py**: Script for handling the chatbot responses.
+- **assets/**: Directory for storing static files such as images.
+- **templates/**: Directory for HTML templates.
+- **content.json**: Dataset file for training the model.
+- **words.pkl** and **tags.pkl**: Pickle files for preprocessed data.
+- **chatbot_model.keras**: Saved trained model.
 
 
 
