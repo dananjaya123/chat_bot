@@ -64,5 +64,5 @@ The chatbot is designed to train on a dataset of intents and respond to user inp
 - **words.pkl** and **tags.pkl**: Pickle files for preprocessed data.
 - **chatbot_model.keras**: Saved trained model.
 
-![Chat_bot](assets/img/robot.png)
+![Chat_bot](assets/img/robot.jpg)
 
